@@ -18,5 +18,4 @@ class HeroAllegiances extends Model
 
     protected $table = self::TABLE_NAME;
     protected $primaryKey = self::PRIMARY_KEY;
-    public $incrementing = true;
 }

@@ -17,5 +17,4 @@ class HeroBooks extends Model
         PRIMARY_KEY = self::COL_NAME_ID;
 
     protected $table = self::TABLE_NAME;
-    protected $primaryKey = self::PRIMARY_KEY;
 }
