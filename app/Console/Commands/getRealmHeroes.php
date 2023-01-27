@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Services\HeroService;
+use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class getRealmHeroes extends Command
 {
@@ -25,9 +28,18 @@ class getRealmHeroes extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(HeroService $heroService)
     {
-        echo 'dracarys';
-        return Command::SUCCESS;
+        try {
+            $heroService->getAndSaveHeroesToDB();
+            return true;
+        } catch(Exception $e){
+            Log::error(
+                'Error: '.$e->getMessage(). ' in: '.$e->getFile().
+                ' line: '.$e->getLine().' '.$e->getTraceAsString()
+            );
+            echo 'Something went wrong: '.$e->getMessage().' for more info check logs.';
+            return false;
+        }
     }
 }
