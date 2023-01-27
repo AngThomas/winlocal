@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -46,5 +48,11 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $e): JsonResponse
+    {
+        Log::error('Error:'. $e->getMessage().' See stack trace: '.$e->getTraceAsString());
+        return response()->json(['error' => 'Mistakes have been done. And reported.'], 500);
     }
 }
