@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class HeroController extends Controller
 {
-    public function getHeroes()
+    public function getHeroesFromDB()
     {
 
     }
