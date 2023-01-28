@@ -27,6 +27,7 @@ class Heroes extends Model
     protected $primaryKey = self::PRIMARY_KEY;
 
     protected $hidden = [
+        self::COL_NAME_ID,
         'created_at',
         'updated_at',
     ];

@@ -10,13 +10,20 @@ use App\Models\Heroes;
 use App\Models\HeroPovBooks;
 use App\Models\HeroTitles;
 use App\Models\HeroTvSeries;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class HeroesReadRepository
 {
+    private const RELATED_TABLES_FIELDS = [
+        'alias',
+        'title',
+        'book',
+        'tv_serie',
+    ];
 
-    public function getHeroes(array $searchFields)
+    public function getHeroes(array $searchFields): string|LengthAwarePaginator
     {
-        return Heroes::with('heroAliases', 'heroTitles', 'heroTvSeries')
+        $query = Heroes::with('heroAliases', 'heroTitles', 'heroTvSeries')
             ->whereHas('heroAliases', function ($query) use ($searchFields) {
                 if (isset($searchFields['alias'])) {
                     $query->where('alias', 'like', '%'.$searchFields['alias'].'%');
@@ -31,6 +38,15 @@ class HeroesReadRepository
                 if (isset($searchFields['tv_serie'])) {
                     $query->where('tv_serie', 'like', '%' . $searchFields['tv_serie'] . '%');
                 }
-            })->paginate(10);
+            });
+
+        foreach ($searchFields as $fieldKey => $fieldVal){
+            if (!in_array($fieldKey, $searchFields) && isset($fieldVal)){
+                $query->where($fieldKey, 'like', "%{$fieldVal}%");
+            }
+        }
+
+        $paginatedResult = $query->paginate(10, ['*'], 'of Vesteros');
+        return $paginatedResult->isNotEmpty() ? $paginatedResult : "There is no hero with these characteristics.";
     }
 }
