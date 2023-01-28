@@ -18,8 +18,16 @@ class HeroTitles extends Model
 
     protected $table = self::TABLE_NAME;
     protected $primaryKey = self::PRIMARY_KEY;
+
     protected $fillable = [
         self::COL_NAME_HERO_ID,
         self::COL_NAME_TITLE,
+    ];
+
+    protected $hidden = [
+        self::COL_NAME_ID,
+        self::COL_NAME_HERO_ID,
+        'created_at',
+        'updated_at',
     ];
 }

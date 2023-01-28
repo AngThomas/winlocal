@@ -25,16 +25,16 @@ class HeroesRequest extends FormRequest
     {
         return [
             'filter'            => 'nullable|array|max:10',
-            'filter.name'       => 'string|max:100',
-            'filter.gender'     => 'string|max:100',
-            'filter.culture'    => 'string|max:100',
-            'filter.died'       => 'string|max:100',
-            'filter.mother'     => 'string|max:100',
-            'filter.father'     => 'string|max:100',
-            'filter.title'      => 'string|max:100',
-            'filter.alias'      => 'string|max:100',
-            'filter.book'       => 'string|max:100',
-            'filter.tv_series'  => 'string|max:100',
+            'filter.name'       => 'nullable|string|max:100',
+            'filter.gender'     => 'nullable|string|max:100',
+            'filter.culture'    => 'nullable|string|max:100',
+            'filter.died'       => 'nullable|string|max:100',
+            'filter.mother'     => 'nullable|string|max:100',
+            'filter.father'     => 'nullable|string|max:100',
+            'filter.title'      => 'nullable|string|max:100',
+            'filter.alias'      => 'nullable|string|max:100',
+            'filter.book'       => 'nullable|string|max:100',
+            'filter.tv_series'  => 'nullable|string|max:100',
         ];
     }
 }
