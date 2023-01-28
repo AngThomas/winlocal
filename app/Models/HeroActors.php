@@ -18,6 +18,10 @@ class HeroActors extends Model
 
     protected $table = self::TABLE_NAME;
     protected $primaryKey = self::PRIMARY_KEY;
+    protected $fillable = [
+        self::COL_NAME_HERO_ID,
+        self::COL_NAME_PLAYED_BY,
+    ];
 
 
 }
