@@ -22,6 +22,7 @@ class HeroController extends Controller
 
     public function getHeroesFromDB(HeroesRequest $heroesRequest)
     {   $heroesDto = $this->heroesDtoBuilder->buildFromRequest($heroesRequest->validated());
-        return $this->heroesReadRepository->getHeroes($heroesDto->toArray());
+        $queryResult = $this->heroesReadRepository->getHeroes($heroesDto->toArray());
+        return response()->json($queryResult);
     }
 }

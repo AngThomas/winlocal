@@ -26,6 +26,11 @@ class Heroes extends Model
     protected $table = self::TABLE_NAME;
     protected $primaryKey = self::PRIMARY_KEY;
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
 
     public function heroActors(){
        return $this->hasMany(HeroActors::class, HeroActors::COL_NAME_HERO_ID, self::PRIMARY_KEY);

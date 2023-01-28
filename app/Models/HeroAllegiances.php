@@ -22,4 +22,11 @@ class HeroAllegiances extends Model
         self::COL_NAME_HERO_ID,
         self::COL_NAME_ALLEGIANCE,
     ];
+
+    protected $hidden = [
+        self::COL_NAME_ID,
+        self::COL_NAME_HERO_ID,
+        'created_at',
+        'updated_at',
+    ];
 }
