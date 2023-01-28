@@ -16,15 +16,15 @@ return new class extends Migration
     {
         Schema::create(Heroes::TABLE_NAME, function (Blueprint $table) {
             $table->id();
-            $table->string(Heroes::COL_NAME_URL, 100);
-            $table->string(Heroes::COL_NAME_NAME, 40);
-            $table->string(Heroes::COL_NAME_GENDER, 40);
-            $table->string(Heroes::COL_NAME_CULTURE, 40);
-            $table->string(Heroes::COL_NAME_BORN, 40);
-            $table->string(Heroes::COL_NAME_DIED, 40);
-            $table->string(Heroes::COL_NAME_FATHER, 40);
-            $table->string(Heroes::COL_NAME_MOTHER, 40);
-            $table->string(Heroes::COL_NAME_SPOUSE, 40);
+            $table->string(Heroes::COL_NAME_URL, 100)->nullable();
+            $table->string(Heroes::COL_NAME_NAME, 100)->nullable();
+            $table->string(Heroes::COL_NAME_GENDER, 100)->nullable();
+            $table->string(Heroes::COL_NAME_CULTURE, 100)->nullable();
+            $table->string(Heroes::COL_NAME_BORN, 100)->nullable();
+            $table->string(Heroes::COL_NAME_DIED, 100)->nullable();
+            $table->string(Heroes::COL_NAME_FATHER, 100)->nullable();
+            $table->string(Heroes::COL_NAME_MOTHER, 100)->nullable();
+            $table->string(Heroes::COL_NAME_SPOUSE, 100)->nullable();
             $table->timestamps();
         });
     }
