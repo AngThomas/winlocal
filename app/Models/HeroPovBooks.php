@@ -11,8 +11,8 @@ class HeroPovBooks extends Model
 
     public const
         TABLE_NAME = 'hero_pov_books',
-        COL_NAME_ID = 'id',
-        COL_NAME_HERO_ID = 'hero_id',
+        COL_NAME_ID = 'pov_book_id',
+        COL_NAME_HERO_ID = 'pov_book_hero_id',
         COL_NAME_POV_BOOK_URL = 'pov_book_url',
         PRIMARY_KEY = self::COL_NAME_ID;
 

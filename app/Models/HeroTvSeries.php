@@ -11,9 +11,9 @@ class HeroTvSeries extends Model
 
     public const
         TABLE_NAME = 'hero_tv_series',
-        COL_NAME_ID = 'id',
-        COL_NAME_HERO_ID = 'hero_id',
-        COL_NAME_TV_SERIES = 'tv_series',
+        COL_NAME_ID = 'tv_serie_id',
+        COL_NAME_HERO_ID = 'tv_serie_hero_id',
+        COL_NAME_TV_SERIES = 'tv_serie',
         PRIMARY_KEY = self::COL_NAME_ID;
 
     protected $table = self::TABLE_NAME;

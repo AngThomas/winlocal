@@ -11,8 +11,8 @@ class HeroAllegiances extends Model
 
     public const
         TABLE_NAME = 'hero_allegiances',
-        COL_NAME_ID = 'id',
-        COL_NAME_HERO_ID = 'hero_id',
+        COL_NAME_ID = 'allegiance_id',
+        COL_NAME_HERO_ID = 'allegiance_hero_id',
         COL_NAME_ALLEGIANCE = 'allegiance',
         PRIMARY_KEY = self::COL_NAME_ID;
 

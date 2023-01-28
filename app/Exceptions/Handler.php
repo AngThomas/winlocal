@@ -53,6 +53,6 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e): JsonResponse
     {
         Log::error('Error:'. $e->getMessage().' See stack trace: '.$e->getTraceAsString());
-        return response()->json(['error' => 'Mistakes have been done. And reported.'], 500);
+        return response()->json(['error' => 'Mistakes have been done. And reported.'.$e->getMessage()], 500);
     }
 }

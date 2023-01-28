@@ -122,7 +122,7 @@ class HeroesWriteRepository
                 ]);
             }
 
-            $this->heroes->heroAliases()->saveMany($titlesToSave);
+            $this->heroes->heroTitles()->saveMany($titlesToSave);
         }
 
         return $this;
@@ -138,7 +138,7 @@ class HeroesWriteRepository
                 ]);
             }
 
-            $this->heroes->heroAliases()->saveMany($tvSeriesToSave);
+            $this->heroes->heroTvSeries()->saveMany($tvSeriesToSave);
         }
 
         return $this;

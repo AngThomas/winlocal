@@ -11,8 +11,8 @@ class HeroAliases extends Model
 
     public const
         TABLE_NAME = 'hero_aliases',
-        COL_NAME_ID = 'id',
-        COL_NAME_HERO_ID = 'hero_id',
+        COL_NAME_ID = 'alias_id',
+        COL_NAME_HERO_ID = 'alias_hero_id',
         COL_NAME_ALIAS = 'alias',
         PRIMARY_KEY = self::COL_NAME_ID;
 
