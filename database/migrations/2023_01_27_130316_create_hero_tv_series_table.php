@@ -15,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create(HeroTvSeries::TABLE_NAME, function (Blueprint $table) {
-            $table->id();
+            $table->id(HeroTvSeries::COL_NAME_ID);
             $table->integer(HeroTvSeries::COL_NAME_HERO_ID);
             $table->string(HeroTvSeries::COL_NAME_TV_SERIES, 100);
             $table->timestamps();

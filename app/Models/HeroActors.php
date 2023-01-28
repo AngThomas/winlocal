@@ -11,8 +11,8 @@ class HeroActors extends Model
 
     public const
         TABLE_NAME = 'hero_actors',
-        COL_NAME_ID = 'id',
-        COL_NAME_HERO_ID = 'hero_id',
+        COL_NAME_ID = 'actor_id',
+        COL_NAME_HERO_ID = 'actors_hero_id',
         COL_NAME_PLAYED_BY = 'played_by',
         PRIMARY_KEY = self::COL_NAME_ID;
 

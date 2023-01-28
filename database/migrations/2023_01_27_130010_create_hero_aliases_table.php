@@ -15,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create(HeroAliases::TABLE_NAME, function (Blueprint $table) {
-            $table->id();
+            $table->id(HeroAliases::COL_NAME_ID);
             $table->integer(HeroAliases::COL_NAME_HERO_ID);
             $table->string(HeroAliases::COL_NAME_ALIAS, 100);
             $table->timestamps();
