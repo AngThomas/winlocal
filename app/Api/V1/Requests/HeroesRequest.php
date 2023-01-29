@@ -34,7 +34,7 @@ class HeroesRequest extends FormRequest
             'filter.title'      => 'nullable|string|max:100',
             'filter.alias'      => 'nullable|string|max:100',
             'filter.book'       => 'nullable|string|max:100',
-            'filter.tv_series'  => 'nullable|string|max:100',
+            'filter.tv_serie'  => 'nullable|string|max:100',
         ];
     }
 }
