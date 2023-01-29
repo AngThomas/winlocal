@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [AuthController::class, 'login']);
-
+Route::get('/heroes', [HeroController::class, 'getHeroesFromDB']);
 Route::middleware('check.admin')->get('/register', [AuthController::class, 'register']);
-
-Route::middleware('auth:sanctum')->get('/heroes', [HeroController::class, 'getHeroesFromDB']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 Route::fallback(static function() {
     return response()->json(['error' => 'There\'s no such place']);

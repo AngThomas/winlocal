@@ -41,12 +41,12 @@ class HeroesReadRepository
             });
 
         foreach ($searchFields as $fieldKey => $fieldVal){
-            if (!in_array($fieldKey, self::RELATED_TABLES_FIELDS) && isset($fieldVal)){
+            if (!in_array($fieldKey, $searchFields) && isset($fieldVal)){
                 $query->where($fieldKey, 'like', "%{$fieldVal}%");
             }
         }
 
-        $paginatedResult = $query->paginate(10, ['*'], 'ofVesteros');
+        $paginatedResult = $query->paginate(10, ['*'], 'of Vesteros');
         return $paginatedResult->isNotEmpty() ? $paginatedResult : "There is no hero with these characteristics.";
     }
 }
