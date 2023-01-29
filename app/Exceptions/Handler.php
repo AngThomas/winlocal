@@ -58,6 +58,6 @@ class Handler extends ExceptionHandler
         }
 
         Log::error('Error:'. $e->getMessage().' See stack trace: '.$e->getTraceAsString());
-        return response()->json(['error' => 'Mistakes have been done. Check log for more information'.$e->getMessage()], 500);
+        return response()->json(['error' => 'Mistakes have been done. Check log for more information'], 500);
     }
 }
